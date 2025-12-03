@@ -18,7 +18,7 @@ WeatherVoyager functions as a **live atmospheric explorer**, powered by a Next.j
 - **Landing Page**  
 
 
-https://github.com/user-attachments/assets/729f3803-c964-4f40-8a45-c7877743a25e
+https://github.com/user-attachments/assets/00f94f69-e31d-473c-a5ca-eac761538745
 
 
 - **3D Globe View**  
