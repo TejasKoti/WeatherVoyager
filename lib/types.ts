@@ -1,5 +1,7 @@
 export interface BalloonPoint {
   balloonId: string;
+  missionId: string;
+  pointId: string;
   timestamp: string;
   lat: number;
   lon: number;
@@ -9,6 +11,8 @@ export interface BalloonPoint {
 
 export interface BalloonTrack {
   id: string;
+  missionId: string;
+  launchSiteId?: string | null;
   points: BalloonPoint[];
 }
 
@@ -27,4 +31,17 @@ export interface BalloonWeather {
 export interface BalloonHistoryWithWeatherResponse
   extends BalloonHistoryResponse {
   latestWeather: Record<string, BalloonWeather>;
+}
+
+export interface WindborneFlightDataPoint {
+  transmit_time: string;
+  latitude: number;
+  longitude: number;
+  altitude?: number | null;
+  id: string;
+}
+
+export interface WindborneFlightPathResponse {
+  flight_data: WindborneFlightDataPoint[];
+  launch_site_id?: string | null;
 }

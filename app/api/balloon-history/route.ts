@@ -40,11 +40,14 @@ async function fetchTreasureSnapshot(
       console.error("Treasure fetch failed", hourStr, res.status);
       return null;
     }
+
     const data = await res.json();
+
     if (!Array.isArray(data)) {
       console.warn("Treasure snapshot not an array", hourStr);
       return null;
     }
+
     return data as any[];
   } catch (err) {
     console.error("Treasure snapshot error", hourStr, err);
@@ -93,12 +96,16 @@ function buildBalloonHistory(
       if (!balloons[balloonId]) {
         balloons[balloonId] = {
           id: balloonId,
+          missionId: balloonId,
+          launchSiteId: null,
           points: [],
         };
       }
 
       const point: BalloonPoint = {
         balloonId,
+        missionId: balloonId,
+        pointId: `${balloonId}-${hour}-${idx}`,
         timestamp,
         lat,
         lon,
